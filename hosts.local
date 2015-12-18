@@ -1,0 +1,8 @@
+[vagrant]
+ansible-pull 
+
+[common]
+ansible-pull
+
+[pull_mode_hosts]
+ansible-pull
