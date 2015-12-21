@@ -1,2 +1,3 @@
 # Cron job to git clone/pull a repo and then run locally
-{{ schedule }} {{ cron_user }} ansible-pull -d {{ workdir }} -U {{ repo_url }} >>{{ logfile }} 2>&1
+# Possible staggered run: */20 * * * * root sleep $((${RANDOM} % 600)); /usr/local/bin/ansible-pull
+{{ schedule }} {{ cron_user }} ansible-pull -d {{ workdir }} -o -U {{ repo_url }} >>{{ logfile }} 2>&1
