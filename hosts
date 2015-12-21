@@ -8,7 +8,5 @@ prd-ansible-pull
 stg-ansible-pull
 dev-ansible-pull
 
-[pull_mode_hosts]
-prd-*
-stg-*
-dev-*
+[pull_mode_hosts:children]
+vagrant_hosts
