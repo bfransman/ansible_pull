@@ -1,8 +1,14 @@
-[vagrant]
-ansible-pull ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222
+[vagrant_hosts]
+prd-ansible-pull ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222
+stg-ansible-pull ansible_ssh_host=127.0.0.1 ansible_ssh_port=2200
+dev-ansible-pull ansible_ssh_host=127.0.0.1 ansible_ssh_port=2201
 
 [common]
-ansible-pull
+prd-ansible-pull
+stg-ansible-pull
+dev-ansible-pull
 
 [pull_mode_hosts]
-ansible-pull
+prd-*
+stg-*
+dev-*

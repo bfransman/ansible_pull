@@ -11,21 +11,21 @@ Vagrant.configure(2) do |config|
 
   config.ssh.insert_key = false
 
-  config.vm.define "ansible-pull" do |vagrant1|
+  config.vm.define "prd-ansible-pull" do |vagrant1|
     vagrant1.vm.box = "centos64-x86_64-20140116"
     vagrant1.vm.hostname = "ansible-pull"
     vagrant1.vm.network "forwarded_port", guest: 80, host: 8080
     vagrant1.vm.network "forwarded_port", guest: 443, host: 8443
   end
-#  config.vm.define "vagrant2" do |vagrant2|
-#    vagrant2.vm.box = "centos64-x86_64-20140116"
-#    vagrant2.vm.network "forwarded_port", guest: 80, host: 8081
-#    vagrant2.vm.network "forwarded_port", guest: 443, host: 8444
-#  end
-#  config.vm.define "vagrant3" do |vagrant3|
-#    vagrant3.vm.box = "centos64-x86_64-20140116"
-#    vagrant3.vm.network "forwarded_port", guest: 80, host: 8082
-#    vagrant3.vm.network "forwarded_port", guest: 443, host: 8445
-#  end
+  config.vm.define "stg-ansible-pull" do |vagrant2|
+    vagrant2.vm.box = "centos64-x86_64-20140116"
+    vagrant2.vm.network "forwarded_port", guest: 80, host: 8081
+    vagrant2.vm.network "forwarded_port", guest: 443, host: 8444
+  end
+  config.vm.define "dev-ansible-pull" do |vagrant3|
+    vagrant3.vm.box = "centos64-x86_64-20140116"
+    vagrant3.vm.network "forwarded_port", guest: 80, host: 8082
+    vagrant3.vm.network "forwarded_port", guest: 443, host: 8445
+  end
 
 end
