@@ -1,8 +1,10 @@
 [vagrant]
 ansible-pull 
 
-[common]
+[ansible-pull]
 localhost ansible_connection=local
+
+[common]
 ansible-pull
 
 [pull_mode_hosts]
