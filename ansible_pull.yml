@@ -29,9 +29,13 @@
       file: path={{workdir}} state=directory owner=root group=root mode=0751
       sudo: True
 
-    - name: Copy ansible inventory file to client
-      copy: src=./hosts.local dest=/etc/ansible/hosts
-            owner=root group=root mode=0644
+#    - name: Copy ansible inventory file to client
+#      copy: src=./hosts.local dest=/etc/ansible/hosts
+#            owner=root group=root mode=0644
+#      sudo: True
+
+    - name: Create ansible inventory file for client
+      template: src=templates/hosts.j2 dest=/etc/ansible/hosts owner=root group=root mode=0644
       sudo: True
 
     - name: Create crontab entry to clone/pull git repository
