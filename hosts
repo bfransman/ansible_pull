@@ -4,9 +4,9 @@ stg-ansible-pull ansible_ssh_host=127.0.0.1 ansible_ssh_port=2200
 dev-ansible-pull ansible_ssh_host=127.0.0.1 ansible_ssh_port=2201
 
 [common]
-prd-ansible-pull
-stg-ansible-pull
-dev-ansible-pull
+prd-ansible-pull.sciquest.com
+stg-ansible-pull.sciquest.com
+dev-ansible-pull.sciquest.com
 
 [pull_mode_hosts:children]
 vagrant_hosts

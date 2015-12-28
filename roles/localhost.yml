@@ -1,2 +1,0 @@
-[localhost]
-{{ ansible_host }} ansible_connection=local
